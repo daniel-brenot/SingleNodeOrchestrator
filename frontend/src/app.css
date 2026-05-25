@@ -1,4 +1,14 @@
+@import '../node_modules/@smui/top-app-bar/bare.css';
+@import '../node_modules/@smui/button/bare.css';
+@import '../node_modules/@smui/card/bare.css';
+
 :root {
+  --mdc-theme-primary: #0f172a;
+  --mdc-theme-on-primary: #f8fafc;
+  --mdc-theme-secondary: #38bdf8;
+  --mdc-theme-surface: rgba(15, 23, 42, 0.82);
+  --mdc-theme-on-surface: #e5e7eb;
+  --mdc-shape-medium: 24px;
   color: #e5e7eb;
   background: #0f172a;
   font-family:
@@ -11,10 +21,48 @@ body {
   min-height: 100vh;
 }
 
+#app {
+  min-height: 100vh;
+}
+
 button,
 input,
 textarea {
   font: inherit;
+}
+
+.app-bar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0 1rem;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(16px);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.nav-button.mdc-button {
+  min-width: auto;
+  height: 40px;
+  border-radius: 999px;
+  padding: 0 1rem;
+  color: #cbd5e1;
+  letter-spacing: 0.02em;
+}
+
+.nav-button.mdc-button.active,
+.nav-button.mdc-button:hover {
+  color: #f8fafc;
+  background: rgba(56, 189, 248, 0.16);
 }
 
 .shell {
@@ -23,22 +71,21 @@ textarea {
   gap: 2rem;
   width: min(1100px, 100%);
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 8rem 1.5rem 4rem;
 }
 
-.hero,
-.panel {
+.hero-card,
+.panel-card {
   border: 1px solid rgba(148, 163, 184, 0.25);
-  border-radius: 24px;
   background: rgba(15, 23, 42, 0.82);
   box-shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
 }
 
-.hero {
+.hero-card .card-content {
   padding: 3rem;
 }
 
-.panel {
+.panel-card .card-content {
   padding: 2rem;
 }
 
@@ -104,23 +151,37 @@ h2 {
   gap: 1rem;
 }
 
-article {
+.metric-card {
   border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 18px;
-  padding: 1.25rem;
   background: rgba(30, 41, 59, 0.7);
 }
 
-article span {
+.metric-content {
+  padding: 1.25rem;
+}
+
+.metric-content span {
   display: block;
   margin-bottom: 0.75rem;
   color: #94a3b8;
 }
 
-article strong {
+.metric-content strong {
   font-size: 1.75rem;
 }
 
 .error {
   color: #fca5a5;
+}
+
+@media (max-width: 760px) {
+  .nav-actions {
+    overflow-x: auto;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .shell {
+    padding-top: 8rem;
+  }
 }
