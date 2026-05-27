@@ -1,21 +1,17 @@
 # Single Node Orchestrator
 
-A Rust and Svelte starter for a local web UI that manages a machine hosting Kubernetes.
+A project in the works that will allow for managing a single node kubernetes instance easily.
+
+This code is bundled into a single executable in the releases, and should automatically be provided to the updater service when it is complete.
+
+This project is meant to run on a nixos iso that is set up to work for this. As such, downloading ISO files that can run should be done from that page...when it is available.
 
 ## Project Layout
 
 - `backend/` - Rust API server built with Axum.
-- `frontend/` - Svelte/Vite UI that calls the backend with axios.
+- `frontend/` - Sveltekit/Vite UI that calls the backend with axios.
 
 ## Getting Started
-
-Use the project Node version:
-
-```powershell
-$nodeVersion = Get-Content .nvmrc
-nvm install $nodeVersion
-nvm use $nodeVersion
-```
 
 Run the backend:
 
@@ -33,7 +29,3 @@ npm run dev
 
 The frontend dev server proxies `/api` requests to `http://127.0.0.1:3000`.
 
-## Starter API
-
-- `GET /api/health` returns a basic health response.
-- `GET /api/system/summary` returns placeholder host and Kubernetes summary data.

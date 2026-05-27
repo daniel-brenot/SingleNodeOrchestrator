@@ -4,9 +4,17 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-axum = "0.8"
+axum = { version = "0.8", features = ["ws"] }
+envy = "0.4.2"
 serde = { version = "1", features = ["derive"] }
-tokio = { version = "1", features = ["macros", "rt-multi-thread", "net"] }
+tokio = { version = "1", features = ["macros", "net", "process", "rt", "sync", "time"] }
 tower-http = { version = "0.6", features = ["cors"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+kube = { version = "3.1.0", features = ["derive"] }
+k8s-openapi = { version = "0.27.1", features = ["v1_35"] }
+serde_yaml = "0.9"
+sysinfo = "0.38.4"
+serde_json = "1.0.150"
+rusqlite = { version = "0.37.0", features = ["bundled"] }
+lazy_static = "1.5.0"
