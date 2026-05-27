@@ -84,7 +84,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p release/static
-          cp -R frontend/.svelte-kit/output/client/. release/static/
+          cp -R frontend/dist/. release/static/
 
       - name: Upload static artifact
         uses: actions/upload-artifact@v4
